@@ -1,5 +1,5 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,245 +17,198 @@ Set the type and color theme here - the Pro version contains additional themes -
 
 </head>
 <body>
-<!--  ************************************FACEBOOK SCRIPT******************************* -->
 
-<script>
-
-	// This is called with the results from from FB.getLoginStatus().
-  function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    // The response object is returned with a status field that lets the
-    // app know the current login status of the person.
-    // Full docs on the response object can be found in the documentation
-    // for FB.getLoginStatus().
-    if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
 
 
-  window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '{1212373392113632}',
-    xfbml      : true,  // parse social plugins on this page
-    version    : 'v2.2' // use version 2.2
-  });
-}
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 
-
-//(document).trigger('fbload');
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.6&appId=1212373392113632";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-
-
-
-function checkLoginState() {
-
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    console.log(response.authResponse.accessToken);
-  }});
-
-}
-
-</script>
-
-
-
-
-<!--  ************************************************************************************* -->
+<div id="status">
+</div>
+-->
 
 <div class="top-border"></div>
+
 <div class="row">
-	<nav>
-			<ul class="inline-list-custom">
-				<li><div class="fb-login-button" data-size="large" data-auto-logout-link="true"></div></li>					
-			</ul>
-		</nav>
-</div>
-<div class="row">
-	<div class="small-12 medium-12 large-12 small-centered columns">
-		<header>
-			<h1><a href="index.html">Movie EiEi</a></h1>
-			<h2><a href="index.html">NO Spoil .. Just Review </a></h2>
-			<!--
-			<div class="logo">
-				<a href="index.html"><img src="img/logo.png" alt="Your Name Here" /></a>
-			</div>
-			-->
-		</header>
-	</div>
-	<div class="small-12 medium-12 large-12 small-centered columns">
-		<nav>
-			<ul class="inline-list-custom">
-				<li><a href="index.html" class="current">HOME</a></li>
-				<li><a href="index.html" class="current">Top Movies</a></li>
-				<li><a href="index.html" class="current">Categories</a></li>
-				<li><a href="about.html">About</a></li>							
-			</ul>
-		</nav>
-	</div>
+          <div align="right">
+            <img id="status" src="">
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link="true"></fb:login-button>
+            <!--<div class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>-->
+            <button onclick="window.location.href='signup.html'">SIGN UP</button>
+          </div>  
 </div>
 
 <div class="row">
-	<div class="small-12 medium-12 large-12 columns">
-		<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 inline-list-custom">
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 01" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 01</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 02" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 02</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 03" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 03</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 04" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 04</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 05" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 05</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 06" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 06</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 07" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 07</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 08" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 08</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-			
-			<!-- Begin project -->
-			<li>
-				<div class="thumbnail">
-					<div class="thumbnail-img">
-						<div class="thumbnail-hover"><a href="project-01.html"></a></div>
-						<a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 09" /></a>
-					</div>
-					<div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 09</a></div>
-				</div>
-			</li>
-			<!-- End project -->
-						
-		</ul>
-	</div>
+  <div class="small-12 medium-12 large-12 small-centered columns">
+    <header>
+      <h1><a href="index.html">Movie EiEi</a></h1>
+      <h2><a href="index.html">NO Spoil .. Just Review </a></h2>
+      <!--
+      <div class="logo">
+        <a href="index.html"><img src="img/logo.png" alt="Your Name Here" /></a>
+      </div>
+      -->
+    </header>
+  </div>
+  <div class="small-12 medium-12 large-12 small-centered columns">
+    <nav>
+      <ul class="inline-list-custom">
+        <li><a href="index.html" class="current">HOME</a></li>
+        <li><a href="index.html" class="current">Top Movies</a></li>
+        <li><a href="index.html" class="current">Categories</a></li>
+        <li><a href="about.html">About</a></li>             
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <div class="row">
-	<div class="small-12 medium-12 large-12 columns">
-		<footer>
-			<ul>
-				<li>&copy; 2014 <a href="index.html">Movie EiEi</a>. All rights reserved.</li>
-				<li><a href="mailto:hello@yourname.com"><i class="fa fa-envelope-o"></i> admin@movieeiei.com</a></li>
-				
-				<!-- *****************************************************************************************
-				The "Powered by Type & Grids" link in the footer is required in the Free version
-				typeandgrids.com/pirates -->
-				<li>Powered by <a href="http://www.typeandgrids.com" target="_blank">Type &amp; Grids</a></li>
-				<!--  ************************************************************************************ -->
-				
-			</ul>
-			<div class="social-icons">
-				<a href="http://www.twitter.com/typeandgrids" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
-				<a href="http://www.facebook.com/typeandgrids" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
-			</div>
-		</footer>
-	</div>
+  <div class="small-12 medium-12 large-12 columns">
+    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 inline-list-custom">
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 01" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 01</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 02" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 02</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 03" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 03</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 04" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 04</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 05" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 05</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 06" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 06</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 07" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 07</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 08" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 08</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+      
+      <!-- Begin project -->
+      <li>
+        <div class="thumbnail">
+          <div class="thumbnail-img">
+            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
+            <a href="project-01.html"><img src="img/projects/civilwar.jpg" alt="Project 09" /></a>
+          </div>
+          <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">movie 09</a></div>
+        </div>
+      </li>
+      <!-- End project -->
+            
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 medium-12 large-12 columns">
+    <footer>
+      <ul>
+        <li>&copy; 2014 <a href="index.html">Movie EiEi</a>. All rights reserved.</li>
+        <li><a href="mailto:hello@yourname.com"><i class="fa fa-envelope-o"></i> admin@movieeiei.com</a></li>
+        
+        <!-- *****************************************************************************************
+        The "Powered by Type & Grids" link in the footer is required in the Free version
+        typeandgrids.com/pirates -->
+        <li>Powered by <a href="http://www.typeandgrids.com" target="_blank">Type &amp; Grids</a></li>
+        <!--  ************************************************************************************ -->
+        
+      </ul>
+      <div class="social-icons">
+        <a href="http://www.twitter.com/typeandgrids" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+        <a href="http://www.facebook.com/typeandgrids" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
+      </div>
+    </footer>
+  </div>
 </div>
 
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/foundation.min.js"></script>
 <script src="js/hawthorne.js"></script>
+<script src="js/fblogin.js"></script>
+
 
 </body>
 </html>
