@@ -1,6 +1,11 @@
+/*
+$.getScript("jquery.js", function(){
+   console.log("Script loaded but not necessarily executed.");
+});
+*/
+
 //global
-var $fbId ='/';
-var $fname =0;
+var $fbId,$fname,$lname,$email;
 var $picId;
 var $dataparse;
 // This is called with the results from from FB.getLoginStatus().
@@ -79,23 +84,38 @@ var $dataparse;
   // successful.  See statusChangeCallback() for when this call is made.
   function showInformation() {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('me?fields=email,first_name,last_name', function(response) {
-      //$fbId = $fbId.concat(response.id);
-      //$picId = $fbId.concat("/picture");
-      //$name = response.name;
-      //$email = response.email;
-      //var $test = $facebook->api()->api('/me?fields=relationship_status')
-      $dataparse = JSON.stringify(response);
-      //console.log(response);
-      console.log($dataparse);
-      document.getElementById("status").src='http://graph.facebook.com/'+response.id+'/picture';
-    },{'scope':'email'});
-    /*
-    FB.api('/me/permission', function(response) {
+    FB.api('me?fields=email,first_name,last_name,picture', function(response) {
       //$dataparse = JSON.stringify(response);
-      console.log(response);
-      document.getElementById("status").src='http://graph.facebook.com/'+response.id+'/picture';
-    });*/
+      document.getElementById("status").src=response.picture.data.url;
+      parseData(response.id,response.first_name,response.last_name,response.email);
+    },{'scope':'email'});
   }
+  function parseData($fbId,$fname,$lname,$email){
+
+    if ($fbId != 'undefined' && $fname != 'undefined' && $lname != 'undefined' && $email != 'undefined') {
+      console.log($fbId);
+      console.log($fname);
+      console.log($lname);
+      console.log($email);
+
+      $.ajax({
+      type: "GET",
+      url: 'fbtodb.php',
+      data: ({fbId:$fbId,fname:$fname,lname:$lname,email:$email}),
+      success: function(data) {
+        // console.log(data);
+        console.log('sss');
+        console.log(data);
+        
+        //alert(data);
+      }
+      });
+
+    }
+    else{
+      console.log('somedata undefined');
+    }
+  }
+
 
 
