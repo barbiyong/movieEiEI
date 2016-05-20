@@ -106,7 +106,7 @@ var $dataparse;
         // console.log(data);
         console.log('sss');
         console.log(data);
-
+        
         //alert(data);
       }
       });
