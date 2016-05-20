@@ -98,11 +98,13 @@ cursor: pointer;
      <ul class="inline-list-custom">
         <li><a href="index.html">HOME</a></li>
         <!-- Lock the about when user is in page about-->
-        <li><a href="searchReview.php" class="current" >SEARCH</a></li>
-        <li>NEWS</li>
-        <li><a href="ticket.html" >TICKET</a></li>
-        <li>THEATER</li>
-        <li><a href="contact.html">CONTACT US</a></li>            
+       
+				<li><a href="categories.html">CATEGORIES</a></li>
+ 				<li><a href="new.html" >NEW MOVIE</a></li>
+				<li><a href="topmovie.html">TOP MOVIE</a></li>
+				<li><a href="ticket.html" >TICKET</a></li>
+ 				<li><a href="theater.html" >THEATER</a></li>
+ 				<li><a href="about.html" >ABOUT</a></li>          
       </ul>
     </nav>
   </div>

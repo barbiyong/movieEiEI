@@ -50,14 +50,16 @@ Set the type and color theme here - the Pro version contains additional themes -
 	<div class="small-12 medium-12 large-12 small-centered columns">
 		<nav>
 			<!-- make border for Select work and About -->
-			<ul class="inline-list-custom">
-				<li><a href="index.html">HOME</a></li>
-				<!-- Lock the about when user is in page about-->
-				<li>NEWS</li>	
-				<li><a href="ticket.html">TICKET</a></li>
-				<li>THEATER</li>
-				<li><a href="contact.html">CONTACT US</a></li>						
-			</ul>
+			 <ul class="inline-list-custom">
+        
+ <li><a href="index.html">HOME</a></li>
+<li><a href="searchReview.html">CATEGORIES</a></li>
+ <li><a href="new.html" >NEW MOVIE</a></li>
+<li><a href="topmovie.html">TOP MOVIE</a></li>
+<li><a href="ticket.html" >TICKET</a></li>
+ <li><a href="theater.html" >THEATER</a></li>
+ <li><a href="about.html" >ABOUT</a></li>         
+      </ul>
 		</nav>
 	</div>
 </div>
@@ -66,61 +68,54 @@ Set the type and color theme here - the Pro version contains additional themes -
 <div class="row">
 
 <p><h4>CREATE AN ACCOUNT  </h4></p>
-					<form action="getsignup.php" method="get">
-		<!-- Name<form role="form" action="getsignup.php" method="get"> -->
+		
+		<!-- Name--><form>
 					<h4><label for="Name" class="uname" data-icon="u" > Name </label></h4>
-					<input id="username" name="name" required="required" type="text" placeholder="eg.Peach"/>
-					
+					<input id="username" name="username" required="required" type="text" placeholder="eg.Peach"/>
+					</form>
 		<!-- Lastname-->
-					
-					<h4><label for="lastName" class="uname" data-icon="u" > Lastname </label></h4>
-					<input id="lastName" name="lastName" required="required" type="text" placeholder="eg.sasa"/>
-					
+					<form>
+					<h4><label for="Lastname" class="uname" data-icon="u" > Lastname </label></h4>
+					<input id="username" name="username" required="required" type="text" placeholder="eg.sasa"/>
+					</form>
 
 		<!-- username-->
-					
-					<h4><label for="userName" class="uname" data-icon="u" > Username </label></h4>
-					<input id="userName" name="userName" required="required" type="text" placeholder="Username"/>
-					
+					<form>
+					<h4><label for="Username" class="uname" data-icon="u" > Username </label></h4>
+					<input id="username" name="username" required="required" type="text" placeholder="Username"/>
+					</form>
 		<!-- email-->
-				<p> 
+				<p> <form>
 					<h4><label for="Email" class="uname" data-icon="u" > Email </label></h4>
-					<input id=email name="email" required="required" type="text" placeholder="mymail@mail.com"/>
-					
+					<input id="username" name="username" required="required" type="text" placeholder="mymail@mail.com"/>
+					</form>
 				</p>
 	
 		<!-- password -->
-				<p> 
+				<p> <form>
 					<label for="password" class="youpasswd" data-icon="p"> Your password </label>
 					<input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-					
+					</form>
 				</p>
 		<!--confirm password-->
-				<p> 
+				<p> <form>
 					<label for="password" class="youpasswd" data-icon="p"> Confirm password </label>
-					<input id="password_confirm" name="confirm" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-			</form>
+					<input id="password_confirm" name="password_confirm" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+					</form>
 				</p>
 				<script language='javascript' type='text/javascript'>
-    		var password = document.getElementById("password");
-    		var confirm_password= document.getElementById("password_confirm");
-    		function check() 
-    			{
-        		if(password.value != confirm_password.value)
-        			{
-        			confirm_password.setCustomValidity("Password doesn't match");
-        			}
-        		else
-        			{
-        			confirm_password.setCustomValidity('');
-        			}
-    			}
-    			password.onchange = validatePassword;
-				confirm_password.onkeyup = validatePassword;
+    		function check(input) {
+        	if (input.value != document.getElementById('password').value) {
+            input.setCustomValidity('Password Must be Matching.');
+        } else {
+            // input is valid -- reset the error message
+            input.setCustomValidity('');
+        }
+    }
 </script>
 		<!--submit-->
 				
-  				<li><input type="submit" name="submit" value="Submit" /></li>  
+  				<li><input id="SubmitButton" type="submit" name="submit" value="Submit" /></li>  
 
   				
 <!-- make position as row-->

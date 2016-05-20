@@ -23,9 +23,9 @@ Set the type and color theme here - the Pro version contains additional themes -
 <div class="row">
           <div align="right">
             <img id="status" src="">
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-auto-logout-link="true"></fb:login-button>
-            <!--<div class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>-->
+            <div id="FBclickButton" class="fb-login-button" scope="public_profile,email" onlogin="checkLoginState();" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
             <button onclick="window.location.href='register.html'">SIGN UP</button>
+            <button onclick="window.location.href='loginEmail.html'">LOG IN</button>
           </div>  
 </div>
 
@@ -43,14 +43,15 @@ Set the type and color theme here - the Pro version contains additional themes -
   </div>
   <div class="small-12 medium-12 large-12 small-centered columns">
     <nav>
-     <ul class="inline-list-custom">
-        <li><a href="index.html" class="current">HOME</a></li>
-        <!-- Lock the about when user is in page about-->
-        <li><a href="searchReview.php" >SEARCH</a></li>
-        <li>NEWS</li>
-        <li><a href="ticket.html" >TICKET</a></li>
-        <li>THEATER</li>
-        <li><a href="contact.html">CONTACT US</a></li>            
+   <ul class="inline-list-custom">
+        
+ <li><a href="index.html">HOME</a></li>
+<li><a href="searchReview.html">CATEGORIES</a></li>
+ <li><a href="new.html" >NEW MOVIE</a></li>
+<li><a href="topmovie.html">TOP MOVIE</a></li>
+<li><a href="ticket.html" >TICKET</a></li>
+ <li><a href="theater.html" >THEATER</a></li>
+ <li><a href="about.html" >ABOUT</a></li>         
       </ul>
     </nav>
   </div>
@@ -64,8 +65,8 @@ Set the type and color theme here - the Pro version contains additional themes -
       <li>
         <div class="thumbnail">
           <div class="thumbnail-img">
-            <div class="thumbnail-hover"><a href="project-01.html"></a></div>
-            <a href="project-01.html"><img src="img/projects/captain.jpg" height="250px"
+            <div class="thumbnail-hover"><a href="rv.html"></a></div>
+            <a href="rv.html"><img src="img/projects/captain.jpg" height="250px"
   width="250px" alt="Project 01" /></a>
           </div>
           <div class="thumbnail-caption"><a class="caption-link" href="project-01.html">Captain America 3</a></div>
